@@ -1,4 +1,4 @@
-NUMERALS = { 1 => "I", 5 => "V", 10 => "X", 50 => "L", 100 => "C", 500 => "D", 1000 => "M", 5000 => "V_", 10000 => "X_" }
+NUMERALS = { 1000 => "M", 900 => "CM", 500 => "D", 400 => "CD", 100 => "C", 90 => "XC", 50 => "L", 40 => "XL", 10 => "X", 9 => "IX", 5 => "V", 4 => "IV", 1 => "I" }
 
 def romanize_ones(ones)
 	if ones > 0 && ones <= 5
@@ -88,3 +88,8 @@ def romanize(number)
 
 	"#{romanize_thousands(thousands)}#{romanize_hundreds(hundreds)}#{romanize_tens(tens)}#{romanize_ones(ones)}"
 end
+
+puts "What do you want to romanize?"
+input = gets.chomp
+
+puts "#{input} romanized is #{romanize(input)}."
